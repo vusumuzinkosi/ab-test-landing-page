@@ -74,3 +74,18 @@ The new page converts slightly **less**. Over the 21 days the two daily lines cr
 ![Permutation test](figures/permutation_test.png)
 
 The permutation test reaches the same answer as the formula without using one: if the page made no difference, the "old" and "new" labels would be arbitrary, so shuffling them thousands of times shows how big a gap chance alone produces. The observed gap is entirely ordinary.
+
+## 6. Interpreting the result
+
+**The p-value in one sentence:** *if the new page truly made no difference, a gap at least this large would turn up about 19% of the time just from which visitors happened to land in which group.* It is not the probability that the null hypothesis is true.
+
+**Was the test big enough?** "Not significant" could mean "no effect" or "too small a test to tell". Here it is the first:
+
+- To detect the +0.5 point lift that matters with 80% power, the test needed about **68,000 visitors per group**. It had about **145,000**.
+- Its actual power for a +0.5 point lift was **98%**. It could reliably have detected a lift as small as **0.34 points**.
+
+**Was it long enough?** 21 days covers every weekday three times, so weekly shopping patterns are included, and the required sample was reached well before the end. Day-of-week differences bounce around zero with no pattern favouring the new page.
+
+![Decision interval](figures/decision_interval.png)
+
+The whole confidence interval lies **below** the +0.5 point lift worth acting on. A worthwhile improvement is not just unproven; it is ruled out.
