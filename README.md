@@ -24,3 +24,18 @@
 Writing this down first matters. Choosing the test, the threshold or the success criterion after seeing the data (*p-hacking*) can make almost any result look significant.
 
 **Value of a conversion.** For the rand view I assume an average order of **R450** and about **415,000 visitors a month** (the test saw about 290,000 in three weeks). On those assumptions a +0.5 point lift is worth roughly **R930,000 a month** in extra sales.
+
+## 2. Data
+
+**Source:** `ab_data.csv` and `countries.csv` from Udacity's Data Analyst Nanodegree A/B testing project, published at [github.com/jemc36/Udacity-DAND-AB-test-ecommerce](https://github.com/jemc36/Udacity-DAND-AB-test-ecommerce). 294,478 page views from 2 to 24 January 2017.
+
+| Column | Meaning |
+|---|---|
+| `user_id` | Visitor ID |
+| `timestamp` | When the visitor saw the page |
+| `group` | Experiment arm the visitor was assigned to: `control` or `treatment` |
+| `landing_page` | The page actually shown: `old_page` or `new_page` |
+| `converted` | 1 if the visitor went on to buy, 0 if not |
+| `country` | UK, US or CA (from `countries.csv`, joined on `user_id`) |
+
+**In a South African role**, the same analysis would run on the store's own web analytics or experimentation platform data (for example exported page-view and order events), joined on a visitor ID.
