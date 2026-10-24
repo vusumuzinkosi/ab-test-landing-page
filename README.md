@@ -48,3 +48,15 @@ Writing this down first matters. Choosing the test, the threshold or the success
 | Visitor appears twice | 1 visitor | Kept the first visit: the unit of the test is the person |
 
 **Is the randomisation sound?** After cleaning: 145,274 control and 145,310 treatment visitors. A sample ratio check against 50/50 gives p = 0.95, and the country mix is the same in both groups (p = 0.41). No sign that the assignment was broken, so differences in conversion can be credited to the page.
+
+## 4. Conversion rates
+
+| Page | Visitors | Purchases | Conversion rate |
+|---|---|---|---|
+| Old (control) | 145,274 | 17,489 | **12.04%** |
+| New (treatment) | 145,310 | 17,264 | **11.88%** |
+| Difference (new - old) | | | **-0.16 points** |
+
+![Daily conversion](figures/daily_conversion.png)
+
+The new page converts slightly **less**. Over the 21 days the two daily lines cross back and forth, and there is no early spike that fades (which would suggest a novelty effect).
