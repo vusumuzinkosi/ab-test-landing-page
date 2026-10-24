@@ -60,3 +60,17 @@ Writing this down first matters. Choosing the test, the threshold or the success
 ![Daily conversion](figures/daily_conversion.png)
 
 The new page converts slightly **less**. Over the 21 days the two daily lines cross back and forth, and there is no early spike that fades (which would suggest a novelty effect).
+
+## 5. The test
+
+| | Result |
+|---|---|
+| Two-proportion z-test | z = -1.31, **p = 0.19** (two-sided) |
+| Difference, new - old | -0.16 percentage points |
+| **95% confidence interval** | **-0.39 to +0.08 points** |
+| Permutation test (5,000 shuffles) | p = 0.19 |
+| Logistic regression with country | new page coefficient p = 0.19; country effects not significant; page-by-country interaction p = 0.29 |
+
+![Permutation test](figures/permutation_test.png)
+
+The permutation test reaches the same answer as the formula without using one: if the page made no difference, the "old" and "new" labels would be arbitrary, so shuffling them thousands of times shows how big a gap chance alone produces. The observed gap is entirely ordinary.
