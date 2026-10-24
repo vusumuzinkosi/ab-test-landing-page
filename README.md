@@ -89,3 +89,13 @@ The permutation test reaches the same answer as the formula without using one: i
 ![Decision interval](figures/decision_interval.png)
 
 The whole confidence interval lies **below** the +0.5 point lift worth acting on. A worthwhile improvement is not just unproven; it is ruled out.
+
+## 7. Decision: do not roll out
+
+Under the rule fixed before the test: **keep the old page.**
+
+- **Not "keep testing":** the test already had 98% power for the lift that matters. Running longer would only narrow an interval that has already excluded a worthwhile gain.
+- **The new page may even be slightly worse:** the best estimate is -0.16 points, and the interval reaches -0.39.
+- **In rand** (assuming R450 per order and 415,000 visitors a month): the best estimate of switching is about **R295,000 a month less** in sales, with a plausible range from about R736,000 less to R146,000 more. The +0.5 point lift that would have justified the change (about R930,000 a month) is outside that range.
+
+**What to do instead:** keep the old page, fix the routing bug that sent 1.3% of visitors to the wrong page, and take a bolder design idea into the next test. A new page that changes little produces a test that finds little.
