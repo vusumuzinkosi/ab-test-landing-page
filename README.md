@@ -1,5 +1,7 @@
 # A/B Test: Should the Online Store Roll Out the New Landing Page?
 
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![pandas](https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white) ![SciPy](https://img.shields.io/badge/SciPy-8CAAE6?style=flat-square&logo=scipy&logoColor=white) ![statsmodels](https://img.shields.io/badge/statsmodels-4051B5?style=flat-square) ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white) ![Status](https://img.shields.io/badge/Status-Complete-2EA44F?style=flat-square)
+
 **A pre-registered A/B test that gives marketing a clear answer: do not roll out the new landing page.**
 
 290,584 visitors over three weeks, framed for a South African online store.
@@ -149,4 +151,7 @@ figures/             charts used in this README
 data/                raw and processed data (not committed)
 ```
 
-*Author: Vusumuzi Nkosi ([GitHub](https://github.com/vusumuzinkosi))*
+---
+
+**Vusumuzi Nkosi** · Data Scientist · South Africa<br>
+[Portfolio](https://vusumuzinkosi.github.io) · [LinkedIn](https://linkedin.com/in/vusumuzinkosi) · [GitHub](https://github.com/vusumuzinkosi) · [Email](mailto:vusizwe@rocketmail.com)
