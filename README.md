@@ -1,5 +1,19 @@
 # A/B Test: Should the Online Store Roll Out the New Landing Page?
 
+**A pre-registered A/B test that gives marketing a clear answer: do not roll out the new landing page.**
+
+290,584 visitors over three weeks, framed for a South African online store.
+
+| | |
+|---|---|
+| **Question** | Does the new landing page convert better than the old one: roll out, keep the old, or keep testing? |
+| **Set in advance** | Two-sided test, α = 0.05, smallest lift worth acting on +0.5 percentage points |
+| **Result** | New page 11.88% vs old 12.04%: **-0.16 points, p = 0.19, 95% CI -0.39 to +0.08 points** |
+| **Why it is decisive** | 98% power to detect the lift that matters; the whole interval sits below +0.5 points |
+| **Decision** | **Do not roll out.** Fix the 1.3% page-routing bug and test a bolder design next |
+
+![Decision interval](figures/decision_interval.png)
+
 ## 1. Business problem and pre-registration
 
 **Client and context.** The imagined client is a South African online store. Marketing has built a new landing page and believes it converts better than the old one. For three weeks, visitors were randomly shown either the old page (control) or the new page (treatment).
@@ -99,3 +113,40 @@ Under the rule fixed before the test: **keep the old page.**
 - **In rand** (assuming R450 per order and 415,000 visitors a month): the best estimate of switching is about **R295,000 a month less** in sales, with a plausible range from about R736,000 less to R146,000 more. The +0.5 point lift that would have justified the change (about R930,000 a month) is outside that range.
 
 **What to do instead:** keep the old page, fix the routing bug that sent 1.3% of visitors to the wrong page, and take a bolder design idea into the next test. A new page that changes little produces a test that finds little.
+
+## 8. Limitations
+
+- **Three weeks only.** A test this length cannot show long-run effects, such as returning customers getting used to a new design. That is a reason to monitor after any future rollout, not a reason to extend this test.
+- **One metric.** Conversion was the pre-registered metric. Order value, bounce rate or sign-ups could tell a different story and would need their own pre-registered test; checking many metrics after the fact raises the chance of a false positive.
+- **Removed rows.** 3,893 misrouted rows were dropped. If the routing bug affected certain kinds of visitors more than others, the remaining groups could differ slightly; the balance checks found no sign of this.
+- **Not South African data.** The visitors are from the UK, US and Canada, and the rand figures rest on the stated assumptions (R450 per order, 415,000 visitors a month).
+
+## Next steps
+
+- Before the next test, run a **power calculation first** to set the sample size and duration, and pre-register it in the same way.
+- Use the 1.3% routing error as a reason to add an automatic **sample ratio mismatch alert** to the experimentation platform.
+- Consider a **sequential** or Bayesian testing approach, which allows safe early stopping when a result is already clear, as it was here.
+
+## How to run
+
+```bash
+git clone https://github.com/vusumuzinkosi/ab-test-landing-page.git
+cd ab-test-landing-page
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+jupyter notebook notebooks/01_ab_test.ipynb
+```
+
+The notebook downloads the two data files into `data/raw/` if they are not there yet.
+
+## Project structure
+
+```
+notebooks/
+  01_ab_test.ipynb   pre-registration, cleaning, conversion rates, z-test, CI, permutation test,
+                     country check, power and duration
+figures/             charts used in this README
+data/                raw and processed data (not committed)
+```
+
+*Author: Vusumuzi Nkosi ([GitHub](https://github.com/vusumuzinkosi))*
