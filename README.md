@@ -39,3 +39,12 @@ Writing this down first matters. Choosing the test, the threshold or the success
 | `country` | UK, US or CA (from `countries.csv`, joined on `user_id`) |
 
 **In a South African role**, the same analysis would run on the store's own web analytics or experimentation platform data (for example exported page-view and order events), joined on a visitor ID.
+
+## 3. Cleaning and checks
+
+| Issue | Found | Decision |
+|---|---|---|
+| `group` and `landing_page` disagree (a control visitor saw the new page, or the reverse) | 3,893 rows (1.3%) | **Removed.** We cannot tell whether the assignment or the page shown is wrong, and keeping them would blur the difference being measured. In a real company this routing bug would go to the engineering team. |
+| Visitor appears twice | 1 visitor | Kept the first visit: the unit of the test is the person |
+
+**Is the randomisation sound?** After cleaning: 145,274 control and 145,310 treatment visitors. A sample ratio check against 50/50 gives p = 0.95, and the country mix is the same in both groups (p = 0.41). No sign that the assignment was broken, so differences in conversion can be credited to the page.
